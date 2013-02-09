@@ -1,3 +1,6 @@
+(when window-system
+ (cond((featurep 'carbon-emacs-package)
+
 ;言語を日本語にするよ
 (set-language-environment'Japanese)
 
@@ -140,3 +143,8 @@ dvi2-command "open -a TeXShop")
 (set-keyboard-coding-system 'utf-8)
 (set-buffer-file-coding-system 'utf-8)
 (setq default-buffer-file-coding-system 'utf-8)
+)
+((featurep 'ns)
+;;Cocoa Emacs
+))
+)
