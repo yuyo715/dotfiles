@@ -1,7 +1,8 @@
 ;言語を日本語にするよ
 (set-language-environment'Japanese)
+
 ;極力UTF-8とする
-(prefer-coding-system'utf-8)
+;(prefer-coding-system'utf-8)
 
 ;;改行コードを表示
 (setq eol-mnemonic-dos "(CRLF)")
@@ -133,3 +134,9 @@ dvi2-command "open -a TeXShop")
 
 ;; ansi-term Japanese 2012/12/12
 (setq locale-coding-system 'utf-8)
+
+;; utf-8 2013/02/9
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-buffer-file-coding-system 'utf-8)
+(setq default-buffer-file-coding-system 'utf-8)
