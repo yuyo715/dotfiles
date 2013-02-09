@@ -1,6 +1,8 @@
 (when window-system
  (cond((featurep 'carbon-emacs-package)
 
+;; For Carbon Emacs
+
 ;言語を日本語にするよ
 (set-language-environment'Japanese)
 
@@ -145,6 +147,55 @@ dvi2-command "open -a TeXShop")
 (setq default-buffer-file-coding-system 'utf-8)
 )
 ((featurep 'ns)
-;;Cocoa Emacs
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; For Cocoa Emacs
+
+;言語を日本語にするよ
+(set-language-environment'Japanese)
+
+;;改行コードを表示
+(setq eol-mnemonic-dos "(CRLF)")
+(setq eol-mnemonic-mac "(CR)")
+(setq eol-mnemonic-unix "(LF)")
+
+;;Color
+(if window-system (progn
+   (set-background-color "Black")
+   (set-foreground-color "LightGray")
+   (set-cursor-color "Gray")
+   (set-frame-parameter nil 'alpha 80)
+   ))
+
+;;ansi-term 色変更
+(setq term-default-bg-color nil)
+(setq term-default-fg-color nil)
+
+;; Carbon Emacsの設定で入れられた. メニューを隠したり．
+(custom-set-variables
+ '(display-time-mode t)
+ '(tool-bar-mode nil)
+ '(transient-mark-mode t))
+(custom-set-faces
+ )
+
+
+;; backspace C-h 2012/5/29
+(global-set-key "\C-h" 'delete-backward-char)
+
+;;ビープ音消す 2012/11/12
+(setq visible-bell t)
+
+;; kakko 2012/12/9
+(show-paren-mode t)
+
+;; ansi-term Japanese 2012/12/12
+(setq locale-coding-system 'utf-8)
+
+;; utf-8 2013/02/9
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-buffer-file-coding-system 'utf-8)
+(setq default-buffer-file-coding-system 'utf-8)
 ))
 )
