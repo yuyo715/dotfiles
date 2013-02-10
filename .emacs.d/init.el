@@ -231,7 +231,7 @@
 	(setq load-path (cons (expand-file-name "/Applications/MacPorts/Emacs.app/Contents/Resources/site-lisp/yatex") load-path))
 	(setq tex-command "platex --kanji=euc --fmt=platex-euc")
 	(setq tex-command "~/Library/TexShop/bin/platex2pdf-utf8")
-	(add-hook ' yatex-mode-hook'(lambda () (setq auto-fill-function nil)))　;勝手に改行しない
+	(add-hook ' yatex-mode-hook'(lambda () (setq auto-fill-function nil))) ;勝手に改行しない
 
 	;;font
 	(create-fontset-from-ascii-font "Menlo-14:weight=normal:slant=normal" nil "menlokakugo")
