@@ -151,6 +151,17 @@ dvi2-command "open -a TeXShop")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; For Cocoa Emacs
 
+;;load-path
+(setq load-path
+      (append'("~/.emacs.d/site-lisp")
+	     load-path))
+
+;;auto-install
+(require 'auto-install)
+(setq auto-install-directory "~/dotfiles/.emacs.d/site-lisp/")
+(auto-install-update-emacswiki-package-name t)
+(auto-install-compatibility-setup)             ; 互換性確保
+
 ;言語を日本語にするよ
 (set-language-environment'Japanese)
 
@@ -197,5 +208,19 @@ dvi2-command "open -a TeXShop")
 (set-keyboard-coding-system 'utf-8)
 (set-buffer-file-coding-system 'utf-8)
 (setq default-buffer-file-coding-system 'utf-8)
+
+;; anything 2012/11/21
+(require 'anything-startup)
+(define-key global-map (kbd "C-l") 'anything)
+(setq anything-sources
+      '(anything-c-source-buffers+
+	anything-c-source-recentf
+	anything-c-source-man-pages
+	anything-c-source-emacs-commands
+	anything-c-source-emacs-functions
+	anything-c-source-files-in-current-dir
+	))
+
+
 ))
 )
