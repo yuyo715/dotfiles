@@ -152,13 +152,13 @@ dvi2-command "open -a TeXShop")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; For Cocoa Emacs
 
 ;;load-path
-(setq load-path
-      (append'("~/.emacs.d/site-lisp")
-	     load-path))
+;;(setq load-path
+  ;;    (append'("/Applications/MacPorts/Emacs.app/Contents/Resources/site-lisp")
+	;;     load-path))
 
 ;;auto-install
 (require 'auto-install)
-(setq auto-install-directory "~/dotfiles/.emacs.d/site-lisp/")
+(setq auto-install-directory "/Applications/MacPorts/Emacs.app/Contents/Resources/site-lisp")
 (auto-install-update-emacswiki-package-name t)
 (auto-install-compatibility-setup)             ; 互換性確保
 
@@ -220,6 +220,18 @@ dvi2-command "open -a TeXShop")
 	anything-c-source-emacs-functions
 	anything-c-source-files-in-current-dir
 	))
+
+;;yatex
+(setq auto-mode-alist
+	(cons (cons "\\.tex$" 'yatex-mode) auto-mode-alist))
+(autoload 'yatex-mode "yatex" "Yet Another LaTeX mode" t)
+(setq tex-command "platex")
+(setq tex-command "~/Library/TexShop/bin/platex2pdf-euc"
+dvi2-command "open -a TeXShop")
+(setq load-path (cons (expand-file-name "/Applications/MacPorts/Emacs.app/Contents/Resources/site-lisp/yatex") load-path))
+(setq tex-command "platex --kanji=euc --fmt=platex-euc")
+(setq tex-command "~/Library/TexShop/bin/platex2pdf-utf8")
+
 
 
 ))

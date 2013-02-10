@@ -3,14 +3,14 @@
 #
 
 # Edit these variables to be suitable for your site
-PREFIX	= /usr/local
+#PREFIX	= /Application/Macports/
 
 ## mule2
 #EMACS	= mule
 #EMACSDIR= ${PREFIX}/lib/${EMACS}
 ## emacs20 or later
-EMACS	= emacs
-EMACSDIR= ${PREFIX}/share/${EMACS}
+#EMACS	= Emacs.app
+#EMACSDIR= ${PREFIX}/${EMACS}
 ## XEmacs
 #EMACS	= xemacs
 #EMACSDIR= ${PREFIX}/lib/${EMACS}
@@ -18,11 +18,11 @@ EMACSDIR= ${PREFIX}/share/${EMACS}
 #EMACS	= meadow
 #EMACSDIR = c:/usr/local/meadow
 ## CarbonEmacs on Darwin (Sample)
-#EMACS	= /Applications/Emacs.app/Contents/MacOS/Emacs
-#PREFIX	= /Applications/Emacs.app/Contents/Resources
-#EMACSDIR = ${PREFIX}
+EMACS	= /Applications/MacPorts/Emacs.app/Contents/MacOS/Emacs
+PREFIX	= /Applications/MacPorts/Emacs.app/Contents/Resources
+EMACSDIR = ${PREFIX}
 
-LISPDIR	= ${EMACSDIR}/site-lisp/yatex
+LISPDIR	= ${PREFIX}/site-lisp/yatex
 # LISPDIR	= ${EMACSDIR}/site-packages/lisp/yatex
 DOCDIR	= ${LISPDIR}/docs
 HELPDIR	= ${EMACSDIR}/site-lisp
