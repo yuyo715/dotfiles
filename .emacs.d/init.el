@@ -162,7 +162,7 @@
 	(auto-install-update-emacswiki-package-name t)
 	(auto-install-compatibility-setup)             ; 互換性確保
 
-					;言語を日本語にするよ
+	;;言語を日本語にするよ
 	(set-language-environment'Japanese)
 
 	;;改行コードを表示
@@ -231,6 +231,7 @@
 	(setq load-path (cons (expand-file-name "/Applications/MacPorts/Emacs.app/Contents/Resources/site-lisp/yatex") load-path))
 	(setq tex-command "platex --kanji=euc --fmt=platex-euc")
 	(setq tex-command "~/Library/TexShop/bin/platex2pdf-utf8")
+	(add-hook ' yatex-mode-hook'(lambda () (setq auto-fill-function nil)))　;勝手に改行しない
 
 	;;font
 	(create-fontset-from-ascii-font "Menlo-14:weight=normal:slant=normal" nil "menlokakugo")
@@ -240,6 +241,14 @@
 			  nil
 			  'append)
 	(add-to-list 'default-frame-alist '(font . "fontset-menlokakugo"))
+
+	;; オートコンプリートモードON
+					;(require 'auto-complete)
+	(require 'auto-complete-config)
+	(global-auto-complete-mode t)
+
+
+
 
 	))
   )
